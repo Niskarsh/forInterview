@@ -1,5 +1,5 @@
 const express = require('express')
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 const { v4: uuidv4 } = require('uuid');
 const { data1 } = require('./data1');
 const { data2 } = require('./data2');
@@ -39,12 +39,13 @@ app.listen(port, () => {
     let dataArray = [ data1, data2, data3, data1, data3, data2, data3, data2, data1, data3, data1, data2, data2, data1, data3 ];
 
     for (let i =0 ; i<15; i++) {
+        console.log(`Populating data for person ${i+1}`);
         let person = {
             id: uuidv4(),
-            name: faker.name.findName(),
+            name: faker.person.fullName(),
             email: faker.internet.email(),
-            phone: faker.phone.phoneNumber(),
-            address: faker.address.streetAddress(),
+            phone: faker.phone.number(),
+            address: faker.location.country(),
             bio: faker.lorem.sentence(),
             data: dataArray[i],
         }

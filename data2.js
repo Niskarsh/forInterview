@@ -1,4 +1,4 @@
-export const data2 = {
+const data2 = {
     "data": {
         "id": "28ffcd33-4ee8-4f3a-aa69-263e8470f1a7",
         "company_id": "ae8b99e8-d7b6-4eb1-bfe2-efb09650345d",
@@ -5117,3 +5117,5 @@ export const data2 = {
         }
     }
 };
+
+module.exports = { data2 };
